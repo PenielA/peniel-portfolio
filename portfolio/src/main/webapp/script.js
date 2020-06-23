@@ -17,7 +17,8 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['I love math!', 'I am the oldest of 5!','I have a huge obsession with Percy Jackson', 
+      'I am Bilingual', 'I enjoy cooking', 'I love reading', 'Friends is my favorite show', 'I am a morning person', 'I am terrified of snakes'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -26,3 +27,15 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+$(document).ready(function (){
+    $('nav a[href*="#"]').click(function () {
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 100
+        }, 2000);
+    });
+    $('#up').click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: 0
+        }, 2000);
+    });
+});

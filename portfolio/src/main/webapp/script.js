@@ -15,18 +15,18 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['I love math!', 'I am the oldest of 5!','I have a huge obsession with Percy Jackson', 
-      'I am Bilingual', 'I enjoy cooking', 'I love reading', 'Friends is my favorite show', 'I am a morning person', 'I am terrified of snakes'];
+// function addRandomGreeting() {
+//   const greetings =
+//       ['I love math!', 'I am the oldest of 5!','I have a huge obsession with Percy Jackson', 
+//       'I am Bilingual', 'I enjoy cooking', 'I love reading', 'Friends is my favorite show', 'I am a morning person', 'I am terrified of snakes'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+//   // Pick a random greeting.
+//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
+//   // Add it to the page.
+//   const greetingContainer = document.getElementById('greeting-container');
+//   greetingContainer.innerText = greeting;
+// }
 $(document).ready(function (){
     $('nav a[href*="#"]').click(function () {
         $('html, body').animate({
@@ -39,3 +39,9 @@ $(document).ready(function (){
         }, 2000);
     });
 });
+
+function getRandomQuoteUsingArrowFunctions() {
+  fetch('/data').then(response => response.text()).then((quote) => {
+    document.getElementById('greeting-container').innerText = quote;
+  });
+}

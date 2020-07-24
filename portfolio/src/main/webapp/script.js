@@ -27,6 +27,14 @@
 //   const greetingContainer = document.getElementById('greeting-container');
 //   greetingContainer.innerText = greeting;
 // }
+function getDataServlet() {
+    fetch('/data')  // sends a request to /data
+    .then(response => response.json()) // parses the response as JSON
+    .then((greeting) => { // now we can reference the fields in here!
+    // console.log(greeting.greetings);
+        document.getElementById('greeting-container').innerText = greeting;
+    });
+}
 $(document).ready(function (){
     $('nav a[href*="#"]').click(function () {
         $('html, body').animate({
@@ -40,8 +48,8 @@ $(document).ready(function (){
     });
 });
 
-function getRandomQuoteUsingArrowFunctions() {
-  fetch('/data').then(response => response.text()).then((quote) => {
-    document.getElementById('greeting-container').innerText = quote;
-  });
-}
+// function getRandomQuoteUsingArrowFunctions() {
+//   fetch('/data').then(response => response.text()).then((quote) => {
+//     document.getElementById('greeting-container').innerText = quote;
+//   });
+// }

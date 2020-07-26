@@ -35,12 +35,12 @@ p {
 img{
     width: 100%;
 }
-.greeting-box{
+.comment-box{
     text-align: center;
     padding: 3rem 0;
     position: relative;
 }
-.greeting-box h1{
+.comment-box h1{
     font-size: 3rem;
     color: rgba(255, 255, 255, .7);
     font-weight: 300;
@@ -132,7 +132,7 @@ nav a{
     font-weight: bold;
     margin-bottom: 2rem;
 }
-#greeting-container {
+#comment-container {
   margin-top: 20px;
   font-size: 16px;
 }

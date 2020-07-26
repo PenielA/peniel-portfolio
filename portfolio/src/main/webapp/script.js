@@ -30,9 +30,9 @@
 function getDataServlet() {
     fetch('/data')  // sends a request to /data
     .then(response => response.json()) // parses the response as JSON
-    .then((greeting) => { // now we can reference the fields in here!
-    // console.log(greeting.greetings);
-        document.getElementById('greeting-container').innerText = greeting;
+    .then((comment) => { // now we can reference the fields in here!
+    console.log(comment);
+        document.getElementById('comment-container').innerText = comment;
     });
 }
 $(document).ready(function (){
